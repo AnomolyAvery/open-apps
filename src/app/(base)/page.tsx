@@ -1,11 +1,12 @@
-import { Button } from "@/components/ui/button";
+import { Container } from "@/components/container";
+import { JobList } from "./job-list";
 
 export default function Home() {
   return (
     <main className="py-8">
-      <div className="container mx-auto max-w-screen-xl px-2.5 md:px-20">
-        <Button>Get Started</Button>
-      </div>
+      <Container>
+        <JobList />
+      </Container>
     </main>
   );
 }
