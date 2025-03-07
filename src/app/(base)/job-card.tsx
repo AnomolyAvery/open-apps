@@ -1,5 +1,5 @@
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -13,9 +13,11 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { Search, Users } from "lucide-react";
+import { ArrowRight, Search, Users } from "lucide-react";
+import Link from "next/link";
 
 interface JobCardProps {
+  id: string;
   title: string;
   open: boolean;
   description?: string;
@@ -25,6 +27,7 @@ interface JobCardProps {
 }
 
 export function JobCard({
+  id,
   title,
   open,
   description,
@@ -67,7 +70,10 @@ export function JobCard({
             </Tooltip>
           )}
         </div>
-        <Button>Apply</Button>
+        <Link href={`/job/${id}`} className={buttonVariants()}>
+          Apply
+          <ArrowRight />
+        </Link>
       </CardFooter>
     </Card>
   );
